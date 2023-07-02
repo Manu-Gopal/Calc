@@ -42,12 +42,20 @@ function eqclick(){
     }
     else if(flag==4){
         var squareRootValue=document.getElementById("screen").value
-        var number = parseFloat(squareRootValue.replace("√", ""));
-        if(number>=0){
-            result=Math.sqrt(number)
+        var splits = squareRootValue.split('√');
+        //The below lines of code changes `a+√b+√c` to `a+b**0.5+c**0.5`
+        for (var i=1; i<splits.length; i++) {
+            if (splits[i][0] == '-') {
+                //This if condition checks whether the number inside square root is negative
+                //and raises error.
+                splits[i] = 'NaN';
+                break;
+            }
+            splits[i] = splits[i].replace(parseFloat(splits[i]), parseFloat(splits[i]) + "**0.5");
         }
-        else{
-            result="Error"
+        result = eval(splits.join(''));
+        if(isNaN(result)) {
+            result="Error";
         }
 
 
