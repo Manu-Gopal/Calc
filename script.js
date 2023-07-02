@@ -36,7 +36,9 @@ function clrscr(){
 
 function eqclick(){
     if(flag==3){
-        result=sqr*sqr
+        text=document.getElementById("screen").value
+        text=text.replace("²","**2")
+        result=eval(text)
     }
     else if(flag==4){
         var squareRootValue=document.getElementById("screen").value
@@ -47,7 +49,21 @@ function eqclick(){
         else{
             result="Error"
         }
-        
+
+
+
+        // text=document.getElementById("screen").value
+        // var expression=text.toString()
+        // function parseExpression(expression) {
+            // Regular expression to match the square root symbol and the number
+            // const regex = new RegExp("√" + "(\\d+)", "g");
+            
+            // Replace the square root symbol and the number with Math.sqrt
+        //     const parsedExpression = expression.replace(regex, (_, number) => `Math.sqrt(${number})`);
+        //     return parsedExpression;
+        //   }
+        //   const parsedExpression = parseExpression(expression);
+        //   const result = eval(parsedExpression);
     }
     else{
         text=document.getElementById("screen").value
@@ -70,19 +86,18 @@ function answer(){
 }
 
 function sq(){
-    sqr=document.getElementById("screen").value
     document.getElementById("screen").value+="²"
     flag=3
 }
 
-// const sqrtButton = document.getElementById('sqrt');
-// sqrtButton.addEventListener('click', sq_root);
 
 function sq_root(){
-    document.getElementById("screen").value="√";
+    text=document.getElementById("screen").value
+    if(text==0){
+        document.getElementById("screen").value="√";
+    }
+    else{
+        document.getElementById("screen").value+="√";
+    }
     flag=4
-    // text=document.getElementById("screen").value
-    // var text_float = parseFloat(text.value)
-    // result=Math.sqrt(text)
-    // document.getElementById("screen").value=result
 }
