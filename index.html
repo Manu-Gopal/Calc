@@ -1,4 +1,5 @@
-<!DOCTYPE html>
+
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -119,4 +120,124 @@
     <script src="script.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
-</html> 
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Audiowide">
+    <!-- better to add the script file at the bottom of the code to avoid lag problems -->
+    <style>
+
+        .screen {
+            /* width: 80%; */
+            /* margin-left: 40px; */
+            height: 50px;
+            font-size: 25px;
+            border-radius: 10px;
+            /* margin-top: 25px; */
+            background-color: rgb(174, 239, 239);
+            pointer-events: none;
+            /*so we cannot edit in the text field*/
+        }
+
+        .btn {
+            /* width: 70px;
+            height: 70px; */
+            /* font-size: 25px; */
+            border-radius: 10px;
+            background-color: rgb(151, 205, 188);
+            /* margin-left: 8%; */
+            /* margin-top: 30px; */
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            /* width: 70px;
+            height: 70px; */
+            /* font-size: 25px; */
+            border-radius: 10px;
+            background-color: rgb(43, 133, 27);
+            /* margin-left: 8%; */
+            /* margin-top: 30px; */
+            cursor: pointer;
+        }
+
+        .btn_op {
+            /* width: 70px;
+            height: 70px;
+            /* font-size: 25px; */
+            border-radius: 10px;
+            background-color: rgb(95, 129, 185);
+            /* margin-left: 8%; */
+            /* margin-top: 30px; */
+            cursor: pointer;
+        }
+
+        .btn_op:hover {
+            /* width: 70px;
+            height: 70px; */
+            font-size: 25px;
+            border-radius: 10px;
+            background-color: rgb(43, 133, 27);
+            /* margin-left: 8%; */
+            /* margin-top: 30px; */
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid d-flex flex-column align-items-center">
+        <h1 style="font-family:ALGERIAN;">CALCULATOR</h1>
+        <div class="col-md-6  col-10" style="max-width: 400px;">
+            <div class="rounded bg-dark d-flex flex-column align-items-center">
+                <div class="output my-4 w-100 px-4 ">
+                    <input type="text" class="screen w-100" id="screen">
+                </div>
+                <div class="col-12">
+                    <div class="d-flex">
+                        <button onclick="clrscr()" class="btn_op btn-lg btn-block mx-1">C</button>
+                        <button onclick="answer()" class="btn_op  btn-lg btn-block mx-1">Ans</button>
+                        <button onclick="sq()" class="btn_op  btn-lg btn-block mx-1">x²</button>
+                        <button onclick="sq_root()" class="btn_op  btn-lg btn-block mx-1" id="sqrt">√</button>
+                    </div>
+                    <div class="d-flex my-3">
+                        <button onclick="clicks(7)" class="btn  btn-lg btn-block mx-1">7</button>
+                        <button onclick="clicks(8)" class="btn  btn-lg btn-block mx-1">8</button>
+                        <button onclick="clicks(9)" class="btn  btn-lg btn-block mx-1">9</button>
+                        <button onclick="click_op('/')" class="btn_op  btn-lg btn-block mx-1">/</button>
+                    </div>
+                    <div class="d-flex my-3">
+                        <button onclick="clicks(4)" class="btn  btn-lg btn-block mx-1">4</button>
+                        <button onclick="clicks(5)" class="btn  btn-lg btn-block mx-1">5</button>
+                        <button onclick="clicks(6)" class="btn  btn-lg btn-block mx-1">6</button>
+                        <button onclick="click_op('*')" class="btn_op  btn-lg btn-block mx-1">x</button>
+                    </div>
+                    <div class="d-flex my-3">
+                        <button onclick="clicks(1)" class="btn  btn-lg btn-block mx-1">1</button>
+                        <button onclick="clicks(2)" class="btn  btn-lg btn-block mx-1">2</button>
+                        <button onclick="clicks(3)" class="btn  btn-lg btn-block mx-1">3</button>
+                        <button onclick="click_op('-')" class="btn_op  btn-lg btn-block mx-1">-</button>
+                    </div>
+                    <div class="d-flex my-3">
+                        <button onclick="clicks(0)" class="btn  btn-lg btn-block mx-1">0</button>
+                        <button onclick="clicks('.')" class="btn_op  btn-lg btn-block mx-1">.</button>
+                        <button onclick="click_op('+')" class="btn_op  btn-lg btn-block mx-1">+</button>
+                        <button onclick="eqclick()" class="btn_op  btn-lg btn-block mx-1">=</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+        <script src="script.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+
+</html>
